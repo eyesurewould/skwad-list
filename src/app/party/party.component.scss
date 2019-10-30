@@ -1,0 +1,33 @@
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.currentTrackDark {
+  color: white
+}
+.currentTrackLight {
+  color: black
+}
+.upcomingTrackDark {
+  color: white
+}
+.upcomingTrackLight {
+  color: black
+}
+
+.currentTrackIcon {
+  margin-left: 10px; margin-right: 10px
+}
+.upcomingTrackIcon {
+  margin-left: 10px; margin-right: 10px
+}
+
+.bottom-toolbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px;
+
+}
