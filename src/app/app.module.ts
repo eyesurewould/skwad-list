@@ -3,12 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PartyComponent } from './party/party.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StoreModule } from '@ngrx/store';
-
 import { PartyTrackReducer } from './store/reducers/party-track.reducer';
+import { PartyComponent } from './party/party.component';
 
 // TODO: We're importing WAY MORE than we need to here.
 // Later we can tree - shake this and thin it down
