@@ -10,10 +10,16 @@ export enum PartyTrackActionTypes {
   SKIP_TRACK = '[PARTY] Skip Track',
 }
 
-export class TrackAction implements Action {
+export class AddTrackAction implements Action {
   readonly type = PartyTrackActionTypes.ADD_TRACK
 
   constructor(public payload: PartyTrack) { }
 }
 
-export type PartyTrackAction = TrackAction
+export class LikeTrackAction implements Action {
+  readonly type = PartyTrackActionTypes.LIKE_TRACK
+
+  constructor(public payload: PartyTrack) { }
+}
+
+export type PartyTrackAction = AddTrackAction | LikeTrackAction

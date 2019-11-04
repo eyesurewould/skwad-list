@@ -22,6 +22,8 @@ import {
   MatProgressBarModule,
   MatBadgeModule
 } from '@angular/material';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import {
     MatBadgeModule,
     StoreModule.forRoot({
      partyTracks: PartyTrackReducer
-   })
+   }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

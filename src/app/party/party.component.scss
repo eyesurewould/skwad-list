@@ -22,6 +22,11 @@
   margin-left: 10px; margin-right: 10px
 }
 
+.albumBox {
+  height: 100px;
+  width: 100px;
+}
+
 .bottom-toolbar {
   position: absolute;
   bottom: 0;
@@ -29,5 +34,4 @@
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px;
-
 }

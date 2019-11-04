@@ -50,6 +50,10 @@ export function PartyTrackReducer(state: Array<PartyTrack> = initialState, actio
   switch (action.type) {
     case PartyTrackActionTypes.ADD_TRACK:
       return [...state, action.payload];
+
+    case PartyTrackActionTypes.LIKE_TRACK:
+      return state;
+
     default:
       return state;
   }

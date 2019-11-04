@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+// TODO: Move to AddTrack page
+import { v4 as uuid } from 'uuid';
 
 import { PartyTrack } from '../store/models/party-track.model';
 import { AppState } from '../store/models/app-state.model';
+// TODO: Move to AddTrack page
+import { AddTrackAction, LikeTrackAction } from '../store/actions/party-track.actions';
 import { inherits } from 'util';
 
 @Component({
@@ -13,6 +17,7 @@ import { inherits } from 'util';
 })
 export class PartyComponent implements OnInit {
 
+  // TODO this needs to be moved to a new store for the current track
   currentTrack: PartyTrack =
     {
       id: '0',
@@ -30,6 +35,8 @@ export class PartyComponent implements OnInit {
     };
 
   tracks: Observable<Array<PartyTrack>>;
+  // TODO: Move to AddTrack page
+  newTrack: PartyTrack = { id: '', title: '', artist: '' };
 
   constructor(private store: Store<AppState>) { }
 
@@ -37,26 +44,37 @@ export class PartyComponent implements OnInit {
     this.tracks = this.store.select(store => store.partyTracks);
   }
 
+  // TODO: Move to AddTrack page
+  addTrack() {
+    this.newTrack.id = uuid();
+    this.store.dispatch(new AddTrackAction(this.newTrack));
+    this.newTrack = { id: '', title: '', artist: '' };
+  }
+
   currentTrackStyle() {
     return {
       'background-image': 'url("' + this.currentTrack.image.url + '")',
       'background-size': 'cover',
-      'color': 'inherit'
-    }
+      'background-position': '0 50%',
+      color: 'inherit'
+    };
   }
 
   upcomingTrackStyle( image ) {
     return {
       'background-image': 'url("' + image.url + '")',
       'background-size': 'cover',
-      'color': 'inherit'
-    }
+      'background-position': '0 50%',
+      color: 'inherit'
+    };
   }
 
+  // TODO these really belong in the store since they hold state about a track
   incrementLikes(track) {
-    track.likes++
+    track.likes++;
   }
   incrementDislikes(track) {
-    track.dislikes++
+    track.dislikes++;
   }
+
 }
