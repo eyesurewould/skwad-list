@@ -11,15 +11,15 @@ export enum PartyTrackActionTypes {
 }
 
 export class AddTrackAction implements Action {
-  readonly type = PartyTrackActionTypes.ADD_TRACK
+  readonly type = PartyTrackActionTypes.ADD_TRACK;
 
   constructor(public payload: PartyTrack) { }
 }
 
 export class LikeTrackAction implements Action {
-  readonly type = PartyTrackActionTypes.LIKE_TRACK
+  readonly type = PartyTrackActionTypes.LIKE_TRACK;
 
   constructor(public payload: PartyTrack) { }
 }
 
-export type PartyTrackAction = AddTrackAction | LikeTrackAction
+export type PartyTrackAction = AddTrackAction | LikeTrackAction;
