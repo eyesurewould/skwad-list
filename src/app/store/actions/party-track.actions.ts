@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
-import { PartyTrack } from '../models/party-track.model';
+import { Track } from '../models/track.model';
 
-export enum PartyTrackActionTypes {
+export enum TrackActionTypes {
   ADD_TRACK = '[PARTY] Add Track',
   LIKE_TRACK = '[PARTY] Like Track',
   DISLIKE_TRACK = '[PARTY] Dis-like Track',
@@ -11,15 +11,15 @@ export enum PartyTrackActionTypes {
 }
 
 export class AddTrackAction implements Action {
-  readonly type = PartyTrackActionTypes.ADD_TRACK;
+  readonly type = TrackActionTypes.ADD_TRACK;
 
-  constructor(public payload: PartyTrack) { }
+  constructor(public payload: Track) { }
 }
 
 export class LikeTrackAction implements Action {
-  readonly type = PartyTrackActionTypes.LIKE_TRACK;
+  readonly type = TrackActionTypes.LIKE_TRACK;
 
-  constructor(public payload: PartyTrack) { }
+  constructor(public payload: Track) { }
 }
 
-export type PartyTrackAction = AddTrackAction | LikeTrackAction;
+export type TrackAction = AddTrackAction | LikeTrackAction;

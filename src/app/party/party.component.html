@@ -47,7 +47,8 @@
     </div>
   </div>
   <mat-toolbar class="bottom-toolbar">
-    <button mat-raised-button id="addTrack" color="primary">
+    <button mat-raised-button id="addTrack" color="primary" [routerLink]="['/party/1/add']"
+      routerLinkActive="router-link-active">
       <mat-icon>add</mat-icon>
     </button>
   </mat-toolbar>

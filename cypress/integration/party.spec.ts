@@ -1,8 +1,8 @@
 /// <reference types="Cypress" />
 
-context('Open the home page', () => {
+context('Open the example party page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:4200/home');
+    cy.visit('http://localhost:4200/party/1');
   });
 
   it('can see the title', () => {

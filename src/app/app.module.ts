@@ -5,10 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { StoreModule } from '@ngrx/store';
-import { PartyTrackReducer } from './store/reducers/party-track.reducer';
-import { PartyComponent } from './party/party.component';
-
 // TODO: We're importing WAY MORE than we need to here.
 // Later we can tree - shake this and thin it down
 import {
@@ -23,17 +19,29 @@ import {
 } from '@angular/material';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+import { StoreModule } from '@ngrx/store';
+import { TrackReducer } from './store/reducers/track.reducer';
+import { PartyComponent } from './party/party.component';
+import { AddTrackComponent } from './add-track/add-track.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PartyComponent
+    PartyComponent,
+    AddTrackComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase, 'skwadlist'),
+    AngularFirestoreModule,
+AngularFireAuthModule,
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
@@ -43,7 +51,7 @@ import { environment } from '../environments/environment';
     MatProgressBarModule,
     MatBadgeModule,
     StoreModule.forRoot({
-     partyTracks: PartyTrackReducer
+     tracks: TrackReducer
    }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],

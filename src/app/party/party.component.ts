@@ -4,10 +4,10 @@ import { Observable } from 'rxjs';
 // TODO: Move to AddTrack page
 import { v4 as uuid } from 'uuid';
 
-import { PartyTrack } from '../store/models/party-track.model';
+import { Track } from '../store/models/track.model';
 import { AppState } from '../store/models/app-state.model';
 // TODO: Move to AddTrack page
-import { AddTrackAction, LikeTrackAction } from '../store/actions/party-track.actions';
+import { AddTrackAction, LikeTrackAction } from '../store/actions/track.actions';
 import { inherits } from 'util';
 
 @Component({
@@ -18,7 +18,7 @@ import { inherits } from 'util';
 export class PartyComponent implements OnInit {
 
   // TODO this needs to be moved to a new store for the current track
-  currentTrack: PartyTrack =
+  currentTrack: Track =
     {
       id: '0',
       title: 'Dolla billz Y\'all',
@@ -34,14 +34,14 @@ export class PartyComponent implements OnInit {
       }
     };
 
-  tracks: Observable<Array<PartyTrack>>;
+  tracks: Observable<Array<Track>>;
   // TODO: Move to AddTrack page
-  newTrack: PartyTrack = { id: '', title: '', artist: '' };
+  newTrack: Track = { id: '', title: '', artist: '' };
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.tracks = this.store.select(store => store.partyTracks);
+    this.tracks = this.store.select(store => store.tracks);
   }
 
   // TODO: Move to AddTrack page

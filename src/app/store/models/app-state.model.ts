@@ -1,5 +1,5 @@
-import { PartyTrack } from './party-track.model';
+import { Track } from './track.model';
 
 export interface AppState {
-  readonly partyTracks: Array<PartyTrack>;
+  readonly tracks: Array<Track>;
 }

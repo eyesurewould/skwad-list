@@ -1,9 +1,9 @@
-import { PartyTrackActionTypes, PartyTrackAction } from '../actions/party-track.actions';
-import { PartyTrack } from '../models/party-track.model';
+import { TrackActionTypes, TrackAction } from '../actions/track.actions';
+import { Track } from '../models/track.model';
 
-const initialState: Array<PartyTrack> = [
+const initialState: Array<Track> = [
   {
-    id: '1',
+    id: 'XiJaF7sKkbDDjX9VB4pS',
     title: 'All my love (is 4u)',
     artist: 'Not Prince',
     album: 'Sony Ate My Lunch',
@@ -17,7 +17,7 @@ const initialState: Array<PartyTrack> = [
     }
   },
   {
-    id: '2',
+    id: 'nKzrtLnCI6wduozyhNR6',
     title: 'Dad emptied the pool',
     artist: 'Sk8Rex',
     album: 'Busted Teeth',
@@ -46,12 +46,12 @@ const initialState: Array<PartyTrack> = [
   }
 ];
 
-export function PartyTrackReducer(state: Array<PartyTrack> = initialState, action: PartyTrackAction) {
+export function TrackReducer(state: Array<Track> = initialState, action: TrackAction) {
   switch (action.type) {
-    case PartyTrackActionTypes.ADD_TRACK:
+    case TrackActionTypes.ADD_TRACK:
       return [...state, action.payload];
 
-    case PartyTrackActionTypes.LIKE_TRACK:
+    case TrackActionTypes.LIKE_TRACK:
       return state;
 
     default:
