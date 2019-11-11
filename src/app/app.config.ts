@@ -1,3 +1,3 @@
 export const config = {
-   collection_endpoint: 'all-tracks'
+   collection_all_tracks: 'all-tracks'
 };

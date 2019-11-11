@@ -1,1 +1,5 @@
 <p>add-track works!</p>
+<tr *ngFor="let track of tracks$ | async; let i=index" [attr.data-index]="i">
+  <td>{{i + 1}}</td>
+  <td>{{track.title}}</td>
+</tr>
