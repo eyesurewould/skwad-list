@@ -1,0 +1,55 @@
+<div layout="row" layout-sm="column" layout-wrap="">
+
+  <div flex="66">
+    <small>Now playing</small>
+    <div [class]="currentTrack.image.isDark === true ? 'currentTrackDark' : 'currentTrackLight'">
+      <div [ngStyle]="currentTrackStyle()">
+        <h1>{{currentTrack.title}}</h1>
+        <h3>{{currentTrack.album}} - {{currentTrack.artist}}</h3>
+        <div>
+          <span (click)="incrementLikes(currentTrack)">
+            <mat-icon id="currentTrackUp" [matBadge]="currentTrack.likes" matBadgeSize="small" matBadgeOverlap="false"
+              matBadgePosition="below" class="currentTrackIcon">
+              thumb_up</mat-icon>
+          </span>
+          <span (click)="incrementDislikes(currentTrack)">
+            <mat-icon id="currentTrackDown" [matBadge]="currentTrack.dislikes" matBadgeSize="small"
+              matBadgeOverlap="false" matBadgePosition="below" class="currentTrackIcon">
+              thumb_down</mat-icon>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div flex="33">
+    <small class="mt-3">Next up</small>
+    <div *ngFor="let track of tracks | async">
+      <div [class]="track.image.isDark === true ? 'upcomingTrackDark' : 'upcomingTrackLight'">
+        <mat-card [ngStyle]="upcomingTrackStyle(track.image)">
+          <span>
+            {{track.title}} - {{track.artist}}</span>
+          <span class="fill-remaining-space"></span>
+          <span (click)="incrementLikes(track)">
+            <mat-icon id="nextTrackUp" [matBadge]="track.likes" matBadgeSize="small" matBadgeOverlap="false"
+              matBadgePosition="below" class="upcomingTrackIcon">
+              thumb_up
+            </mat-icon>
+          </span>
+          <span (click)="incrementDislikes(track)">
+            <mat-icon id="nextTrackDown" [matBadge]="track.dislikes" matBadgeSize="small" matBadgeOverlap="false"
+              matBadgePosition="below" class="upcomingTrackIcon">
+              thumb_down</mat-icon>
+          </span>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <mat-toolbar class="bottom-toolbar">
+    <button mat-raised-button id="addTrack" color="primary">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+
+</div>
