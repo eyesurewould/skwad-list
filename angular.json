@@ -34,6 +34,14 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -71,6 +79,9 @@
             "browserTarget": "skwad-list:build"
           },
           "configurations": {
+            "development": {
+              "browserTarget": "skwad-list:build:development"
+            },
             "production": {
               "browserTarget": "skwad-list:build:production"
             }
@@ -120,6 +131,9 @@
             "devServerTarget": "skwad-list:serve"
           },
           "configurations": {
+            "development": {
+              "devServerTarget": "skwad-list:serve:development"
+            },
             "production": {
               "devServerTarget": "skwad-list:serve:production"
             }
