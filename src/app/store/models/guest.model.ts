@@ -1,4 +1,10 @@
+import { ContactType } from './contact-type.enum';
+
 export interface Guest {
-   id?: string;
-   name: string;
+  guestId: string;
+  name: string;
+  contact?: {
+    type: ContactType;
+    handle: string;
+  };
 }

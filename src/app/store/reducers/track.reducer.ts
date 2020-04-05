@@ -3,7 +3,7 @@ import { Track } from '../models/track.model';
 
 const initialState: Array<Track> = [
   {
-    id: 'XiJaF7sKkbDDjX9VB4pS',
+    trackId: 'XiJaF7sKkbDDjX9VB4pS',
     title: 'All my love (is 4u)',
     artist: 'Not Prince',
     album: 'Sony Ate My Lunch',
@@ -17,7 +17,7 @@ const initialState: Array<Track> = [
     }
   },
   {
-    id: 'nKzrtLnCI6wduozyhNR6',
+    trackId: 'nKzrtLnCI6wduozyhNR6',
     title: 'Dad emptied the pool',
     artist: 'Sk8Rex',
     album: 'Busted Teeth',
@@ -31,7 +31,7 @@ const initialState: Array<Track> = [
     }
   },
   {
-    id: '3',
+    trackId: '34',
     title: '(sad) Again, Forever',
     artist: 'Pretentia Absentia',
     album: 'Moods',

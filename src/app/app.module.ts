@@ -27,13 +27,19 @@ import { StoreModule } from '@ngrx/store';
 import { TrackReducer } from './store/reducers/track.reducer';
 import { PartyComponent } from './party/party.component';
 import { AddTrackComponent } from './add-track/add-track.component';
+import { HostComponent } from './host/host.component';
+
+const reducers = {
+  tracks: TrackReducer
+};
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PartyComponent,
-    AddTrackComponent
+    AddTrackComponent,
+    HostComponent
   ],
   imports: [
     BrowserModule,
@@ -50,10 +56,14 @@ import { AddTrackComponent } from './add-track/add-track.component';
     MatToolbarModule,
     MatProgressBarModule,
     MatBadgeModule,
-    StoreModule.forRoot({
+
+    StoreModule.forRoot(reducers /*, { metaReducers }*/),
+    !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }) : []
+
+    /* StoreModule.forRoot({
      tracks: TrackReducer
-   }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }) */
   ],
   providers: [],
   bootstrap: [AppComponent]

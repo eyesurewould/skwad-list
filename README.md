@@ -1,24 +1,22 @@
 # SkwadList
 
-Shared playlist control for you and your friends.
+Shared playlist control for you and your friends. Use of this app may require an account on Spotify.
 
 ## Development server
 
-Run `npm run dev` OR `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm run dev` OR `ng serve --configuration=development` for a local dev server. Navigate to `http://localhost:4200/`. The app will automatically reload on any source files updates.
 
 ## Build 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` or `npm run build` to build the project. The build artifacts will be stored in the `/dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Note: no actual tests exist currently, just stubs which will likely be removed.
 
 ## Running end-to-end tests
 
-Run `npm e2e` (which will run `npx cypress open`) to execute the end-to-end tests via [Cypress](http://cypress.io/).
+Run `npm run e2e` to execute the end-to-end tests via [Cypress](http://cypress.io/). 
+Note: all test scripts are located at /cypress/integration
 

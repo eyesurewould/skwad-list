@@ -142,5 +142,8 @@
       }
     }
   },
-  "defaultProject": "skwad-list"
+  "defaultProject": "skwad-list",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

@@ -20,7 +20,7 @@ export class PartyComponent implements OnInit {
   // TODO this needs to be moved to a new store for the current track
   currentTrack: Track =
     {
-      id: '0',
+      trackId: '0',
       title: 'Dolla billz Y\'all',
       artist: 'YungStoopid',
       album: 'Fake bitches',
@@ -36,7 +36,7 @@ export class PartyComponent implements OnInit {
 
   tracks: Observable<Array<Track>>;
   // TODO: Move to AddTrack page
-  newTrack: Track = { id: '', title: '', artist: '' };
+  newTrack: Track = { trackId: '', title: '', artist: '' };
 
   constructor(private store: Store<AppState>) { }
 
@@ -46,9 +46,9 @@ export class PartyComponent implements OnInit {
 
   // TODO: Move to AddTrack page
   addTrack() {
-    this.newTrack.id = uuid();
+    this.newTrack.trackId = uuid();
     this.store.dispatch(new AddTrackAction(this.newTrack));
-    this.newTrack = { id: '', title: '', artist: '' };
+    this.newTrack = { trackId: '', title: '', artist: '' };
   }
 
   currentTrackStyle() {
